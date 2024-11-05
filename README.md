@@ -21,7 +21,11 @@ Sum = A’B+AB’ =A ⊕ B Carry = AB
 ![image](https://github.com/naavaneetha/HALF_ADDER_SUBTRACTOR/assets/154305477/bd4a0b2c-cdbc-4184-ab08-81578f121e1f)
 
 Figure -01 HALF ADDER
+ 
+ **Truthtable**
+ ![WhatsApp Image 2024-11-05 at 11 31 45_2a387913](https://github.com/user-attachments/assets/e666288a-792c-40fd-b857-f2d55a611f10)
 
+ 
 **Half Subtractor**
 
 The half-subtractor is a combinational circuit which is used to perform subtraction of two bits. It has two inputs, X (minuend) and Y (subtrahend) and two outputs D (difference) and B (borrow). To perform x - y, we have to check the relative magnitudes of x and y. If x ;;, y, we have three possibilities: 0 - 0 = 0, 1 - 0 = 1, and 1 - I = 0. The result is called the difference bit. If x < y, we have 0 - I, and it is necessary to borrow a 1 from the next higher stage. The I borrowed from the next higher stage adds 2 to the minuend bit, just as in the decimal system a borrow adds 10 to a minuend digit. With the minuend equal to 2, the difference becomes 2 - I = 1. The half-subtractor needs two outputs. One output generates the difference and will be designated by the symbol D. The second output, designated B for borrow, generates the binary signal that informs the next stage that a I has been borrowed. 
@@ -31,9 +35,13 @@ Borrow = A’B
 
  ![image](https://github.com/naavaneetha/HALF_ADDER_SUBTRACTOR/assets/154305477/d76b099c-513f-4e7c-843a-e2fd028a531a)
 
+
+
+
 Figure -02 HALF Subtractor
 
 **Truthtable**
+![WhatsApp Image 2024-11-05 at 11 31 37_eb816aa9](https://github.com/user-attachments/assets/c280ff68-33e2-41c0-ad0d-32c3222decd7)
 
 **Procedure**
 
@@ -49,13 +57,25 @@ Figure -02 HALF Subtractor
 
 
 **Program:**
-
+```
+module ex3(a,b,cy,sm,df,bo);
+input a,b;
+output sm,cy,df,bo;
+xor(sm,a,b);
+and(cy,a,b);
+xor(df,a,b);
+and(bo,~a,b);
+endmodule
+```
 /* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:*/
+Developed by: RegisterNumber:24900457
 
 **RTL Schematic**
+![Screenshot (7)](https://github.com/user-attachments/assets/19ffbc16-6669-455c-8213-693bfc0457a7)
 
 **Output/TIMING Waveform**
+![Screenshot (8)](https://github.com/user-attachments/assets/6e9efa15-a6b3-4ae6-9fd2-34ec3ea8fba9)
 
 **Result:**
+The truth table for half adder and half subtracter are verified successfully.
